@@ -56,7 +56,13 @@ function iloveitaly_download_thumbnail($attr) {
 
 	$public_cache_file = MEDIA_THUMBNAIL_PLUGIN_URL.'cache/'.$cache_file_hash;
 
-	return "<a href='{$download_url}' target='_blank'><img src='{$public_cache_file}' /></a>";
+	$text_link = "";
+
+	if(!empty($attr['title'])) {
+		$text_link = "<br/><a href='{$download_url}' target='_blank'>{$attr['title']}</a>";
+	}
+
+	return "<a href='{$download_url}' target='_blank'><img src='{$public_cache_file}' /></a>".$text_link;
 }
 
 add_shortcode("download_thumbnail", "iloveitaly_download_thumbnail");
