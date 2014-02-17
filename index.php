@@ -35,7 +35,7 @@ function iloveitaly_download_thumbnail($attr) {
 		$cache_file_modified = filemtime($cache_file);
 
 		// delete the cached file if it's expired
-		if($cache_file_modified < time() - $expire) {
+		if($cache_file_modified < time() - $expire || filesize($cache_file) == 0) {
 			unlink($cache_file);
 		}
 	}
