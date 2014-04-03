@@ -13,8 +13,8 @@ define('MEDIA_THUMBNAIL_PLUGIN_URL', plugin_dir_url(__FILE__));
 function iloveitaly_download_thumbnail($attr) {
 	$download_url = $attr['url'];
 
-	// default to 24 hour expiration
-	$expire = 60 * 60 * 24;
+	// default to 7 day expiration
+	$expire = 60 * 60 * 24 * 7;
 
 	$width = 200;
 	$height = 0;
